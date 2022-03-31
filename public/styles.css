@@ -169,6 +169,20 @@ body {
   cursor: pointer;
 }
 
+.btn-signup {
+  color: white;
+  background-color: #f5a302;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 50px;
+  margin: 7px 0;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .btn-google {
   color: white;
   background-color: #dd4b39;
@@ -183,6 +197,6 @@ body {
   cursor: pointer;
 }
 
-.btn-login:hover, .btn-google:hover{
+.btn-login:hover, .btn-signup:hover, .btn-google:hover{
   opacity: .5;
 }

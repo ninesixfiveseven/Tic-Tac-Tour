@@ -28,7 +28,7 @@
             <div class="btnInfo" style="text-align: center; margin-top: 10vh;">
                 <div class="group-btn">
                     <button id="btnLogin" class="btn infos" type="button">Login</button>
-                    <button id="btnRegister" class="btn infos" type="button">Register</button>
+                    <button id="btnSignup" class="btn infos" type="button">Signup</button>
                     <button id="btnGoogle" class="btn google" type="button"><i class="fa fa-google fa-fw"></i> Login with Google+</button>
                 </div>
             </div>
@@ -54,9 +54,46 @@
                         <input class="input-field" type="password" placeholder="Password">
                     </div>
                 </form>
-            <div class="modal-footer">
-                <button type="submit" class="btn-login">Login</button>
-                <button type="button" class="btn-google"><i class="fa fa-google fa-fw"></i> Login with Google+</button>
+                <div class="modal-footer">
+                    <button type="submit" class="btn-login">Login</button>
+                    <button type="button" class="btn-google"><i class="fa fa-google fa-fw"></i> Login with Google+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Signup -->
+    <div id="modalSignup" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Signup</h2>
+            </div>
+            <div class="modal-body">
+                <form id="signup-form" class="" action="#">
+                    <div class="input-container">
+                        <i class="fa fa-user icon"></i>
+                        <input class="input-field" type="text" placeholder="Username">
+                    </div>
+                    <div class="input-container">
+                        <i class="fa fa-lock icon"></i>
+                        <input class="input-field" type="password" placeholder="Password">
+                    </div>
+                    <div class="input-container">
+                        <i class="fa fa-lock icon"></i>
+                        <input class="input-field" type="password" placeholder="Confirm Password">
+                    </div>
+                    <div class="input-container">
+                        <i class="fa fa-envelope icon"></i>
+                        <input class="input-field" type="text" placeholder="Email">
+                    </div>
+                    <label class="container">
+                        <input type="checkbox"><a href="#" style="color:dodgerblue">Terms & Privacy</a>
+                    </label>
+                </form>
+                <div class="modal-footer">
+                    <button type="submit" class="btn-signup">Signup</button>
+                </div>
             </div>
         </div>
     </div>
