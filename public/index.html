@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Tic-Tac-Toe</title>
+    
+    <!-- Firebase libraries V8 -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600&display=swap');
+    </style>
+</head>
+
+
+<body>
+    <section id="welcome-page">
+        <div style=" position: relative; width: 100%; height: 100%;">
+            <img src="/public/Pic/LogoPNG.png" class="cover-bg" alt="">
+            <div class="btnInfo" style="text-align: center; margin-top: 10vh;">
+                <div class="group-btn">
+                    <button id="btnLogin" class="btn infos" type="button">Login</button>
+                    <button id="btnRegister" class="btn infos" type="button">Register</button>
+                    <button id="btnGoogle" class="btn google" type="button"><i class="fa fa-google fa-fw"></i> Login with Google+</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Modal Login -->
+    <div id="modalLogin" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Login</h2>
+            </div>
+            <div class="modal-body">
+                <form id="login-form" class="" action="#">
+                    <div class="input-container">
+                        <i class="fa fa-user icon"></i>
+                        <input class="input-field" type="text" placeholder="Username">
+                    </div>
+                    <div class="input-container">
+                        <i class="fa fa-lock icon"></i>
+                        <input class="input-field" type="password" placeholder="Password">
+                    </div>
+                </form>
+            <div class="modal-footer">
+                <button type="submit" class="btn-login">Login</button>
+                <button type="button" class="btn-google"><i class="fa fa-google fa-fw"></i> Login with Google+</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Firebase SDK setup & configuration -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyBUs_8zavBSFROq3vYyS5ilzm2j8RpyuUE",
+          authDomain: "tic-tac-tour.firebaseapp.com",
+          projectId: "tic-tac-tour",
+          storageBucket: "tic-tac-tour.appspot.com",
+          messagingSenderId: "969382271605",
+          appId: "1:969382271605:web:da0164ca21c45ced76f63c",
+          measurementId: "G-39PJD96YB2"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+</body>
+
+</html>

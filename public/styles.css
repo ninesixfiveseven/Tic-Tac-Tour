@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+  font-family: "Mitr", sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #033c59;
+  background-image: url(/public/Pic/bg.jpg);
+  background-size: cover;
+}
+
+.cover-bg {
+  max-width: 30%;
+  height: auto;
+  bottom: 50vh;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10vh;
+}
+
+.infos {
+  font-family: "Mitr", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: white;
+  color: #f5a302;
+}
+
+.group-btn {
+  width: 340px;
+  margin: 30px auto;
+  font-size: 15px;
+}
+
+.google {
+  background-color: #dd4b39;
+  color: white;
+}
+
+.btn {
+  font-family: "Mitr", sans-serif;
+  width: 70%;
+  padding: 12px;
+  border: none;
+  border-radius: 50px;
+  margin: 7px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  color: black;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 2px 0%;
+  color: white;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: white;
+  margin: auto;
+  padding: 0;
+  border-radius: 25px;
+  width: 25%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+/* Style the input container */
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 0px solid #bfbfbf;
+  border-bottom-width: 2px;
+}
+
+.input-container .fa{
+  font-size: 2vw;
+}
+
+/* Style the form icons */
+.icon {
+  padding: 10px;
+  min-width: 15%;
+  color: black;
+  text-align: center;
+}
+
+/* Style the input fields */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 0px;
+  font-size: 1vw;
+}
+
+.input-field:focus {
+  caret-color: #f5a302;
+}
+
+.btn-login {
+  color: white;
+  background-color: #f5a302;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 50px;
+  margin: 7px 0;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-google {
+  color: white;
+  background-color: #dd4b39;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 50px;
+  margin: 7px 0;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-login:hover, .btn-google:hover{
+  opacity: .5;
+}
