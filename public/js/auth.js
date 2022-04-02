@@ -126,10 +126,21 @@ function googleSignin() {
     });
 }
 
+const refUserList = firebase.database().ref("UserList");
+
+
 // Firebase Authenticate
 firebase.auth().onAuthStateChanged((user) => {
-    console.log("User: ", user);
-    console.log("Init");
-    //window.open("/public/createprofile.html" , '_blank');
-    window.location.href = "create-profile.html";
+    if (user) {
+        console.log("User: ", user);
+
+        const currentUser = firebase.auth().currentUser;
+        refUserList.once('value', snapshot => {
+            if (snapshot.child(currentUser.uid).hasChildren()) {
+                console.log("Ok")
+            } else {
+                window.location.href = "page/create-profile.html";
+            }
+        });
+    }
 });

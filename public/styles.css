@@ -218,12 +218,6 @@ body {
 }
 
 /* Page: Create */
-#create-form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 #file {
   cursor: pointer;
   position: absolute;
@@ -234,6 +228,7 @@ body {
 }
 
 .profile-pic-container {
+  margin: auto;
   position: relative;
   width: 200px;
   height: 200px;
@@ -283,5 +278,22 @@ body {
   font-size: 12px;
   width: 50%;
   text-align: center;
+}
+
+.gender-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.gender {
+  width: 100px;
+  height: 100px;
+  margin: 1rem;
+  opacity: .5;
+  cursor: pointer;
+}
+
+.gender:hover {
+  opacity: 1;
 }
 /* Page: Create */

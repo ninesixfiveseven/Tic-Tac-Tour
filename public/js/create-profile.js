@@ -1,6 +1,10 @@
 // Firebase Authenticate
 firebase.auth().onAuthStateChanged((user) => {
-    console.log("User: ", user);
+    if (user) {
+        console.log("User: ", user);
+    } else {
+        window.location.href = "/public/index.html";
+    }
 });
 
 const img = document.querySelector("#profile-pic");
@@ -20,6 +24,21 @@ file.addEventListener("change", function(){
     }
 });
 
+let genderSelected = "";
+const genders = document.querySelectorAll(".gender");
+genders.forEach(gender => gender.addEventListener("click", genderClick));
+
+function genderClick(event) {
+    genderSelected = event.currentTarget.getAttribute("id");
+    if (genderSelected == "male") {
+        document.querySelector("#male").style.opacity = "1";
+        document.querySelector("#female").style.opacity = ".5";
+    } else if (genderSelected == "female") {
+        document.querySelector("#male").style.opacity = ".5";
+        document.querySelector("#female").style.opacity = "1";
+    }
+}
+
 const refUserList = firebase.database().ref("UserList");
 
 const createForm = document.querySelector("#create-form");
@@ -32,6 +51,7 @@ function createProfile(event) {
 
     refUserList.child(currentUser.uid).update({
         name: name,
+        gender: genderSelected,
         tmr: 0,
         played: 0,
         win: 0,
