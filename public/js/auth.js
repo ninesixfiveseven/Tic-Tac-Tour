@@ -131,5 +131,5 @@ firebase.auth().onAuthStateChanged((user) => {
     console.log("User: ", user);
     console.log("Init");
     //window.open("/public/createprofile.html" , '_blank');
-    window.location.href = "/public/createprofile.html";
+    window.location.href = "create-profile.html";
 });

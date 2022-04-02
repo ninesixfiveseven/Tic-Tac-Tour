@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Tic-Tac-Toe</title>
+    
+    <!-- Firebase libraries V8 -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600&display=swap');
+    </style>
+</head>
+
+
+<body>
+    <div id="modalCreate" class="modal" style="display: flex;">
+        <div class="modal-content">
+            <div class="modal-header" style="text-align: center;">
+                <h2>Create Profile</h2>
+            </div>
+            <div class="modal-body">
+                <form id="create-form" class="" action="#">
+
+                    <div class="profile-pic-container">
+                        <img id="profile-pic" class="profile-pic-image" src="Pic/LogoNormal.jpg"/>
+                        <div class="profile-pic-content">
+                          <span class="profile-pic-icon"><i class="fa fa-camera"></i></span>
+                          <span class="profile-pic-text">Change</span>
+                          <input type="file" id="file">
+                        </div>
+                    </div>
+
+                    <div class="input-container">
+                        <input id="input-name" class="input-field" type="text" placeholder="Name">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn-create">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK setup & configuration -->
+    <script>
+        const firebaseConfig = {
+          apiKey: "AIzaSyBUs_8zavBSFROq3vYyS5ilzm2j8RpyuUE",
+          authDomain: "tic-tac-tour.firebaseapp.com",
+          databaseURL: "https://tic-tac-tour-default-rtdb.asia-southeast1.firebasedatabase.app",
+          projectId: "tic-tac-tour",
+          storageBucket: "tic-tac-tour.appspot.com",
+          messagingSenderId: "969382271605",
+          appId: "1:969382271605:web:da0164ca21c45ced76f63c",
+          measurementId: "G-39PJD96YB2"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig)
+    </script>
+
+    <script src="js/create-profile.js"></script>
+</body>
+</html>
