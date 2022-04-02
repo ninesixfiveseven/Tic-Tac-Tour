@@ -69,7 +69,7 @@ function createProfile(event) {
                 photoURL: pic
             }).then(() => {
                 console.log("Update complete!")
-                window.location.href = "page/home.html";
+                window.location.href = "home.html";
             }).catch((error) => {
         
             });
