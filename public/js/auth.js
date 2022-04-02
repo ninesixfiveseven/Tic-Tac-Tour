@@ -137,7 +137,7 @@ firebase.auth().onAuthStateChanged((user) => {
         const currentUser = firebase.auth().currentUser;
         refUserList.once('value', snapshot => {
             if (snapshot.child(currentUser.uid).hasChildren()) {
-                console.log("Ok")
+                window.location.href = "page/home.html";
             } else {
                 window.location.href = "page/create-profile.html";
             }

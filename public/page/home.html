@@ -25,34 +25,19 @@
 
 
 <body>
-    <div id="modalCreate" class="modal" style="display: flex;">
+    <div id="" class="modal" style="display: flex;">
         <div class="modal-content">
             <div class="modal-header" style="text-align: center;">
-                <h2>Create Profile</h2>
+                <h2 id="user-name">Create Profile</h2>
             </div>
             <div class="modal-body">
                 <form id="create-form" class="" action="#">
-
                     <div class="profile-pic-container">
                         <img id="profile-pic" class="profile-pic-image" src="/public/Pic/LogoNormal.jpg"/>
-                        <div class="profile-pic-content">
-                          <span class="profile-pic-icon"><i class="fa fa-camera"></i></span>
-                          <span class="profile-pic-text">Change</span>
-                          <input type="file" id="file">
-                        </div>
-                    </div>
-
-                    <div class="input-container">
-                        <input id="input-name" class="input-field" type="text" placeholder="Name">
                     </div>
                     <div class="gender-container">
                         <img id="male" class="gender" src="/public/image/gender/male.png"/>
                         <img id="female" class="gender" src="/public/image/gender/female.png"/>
-                    </div>
-                    
-
-                    <div class="modal-footer">
-                        <button type="submit" class="btn-create">Create</button>
                     </div>
                 </form>
             </div>
@@ -76,6 +61,6 @@
         firebase.initializeApp(firebaseConfig)
     </script>
 
-    <script src="/public/js/create-profile.js"></script>
+    <script src="/public/js/home.js"></script>
 </body>
 </html>

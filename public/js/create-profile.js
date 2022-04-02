@@ -69,6 +69,8 @@ function createProfile(event) {
                 photoURL: pic
             }).then(() => {
                 console.log("Update complete!")
+                window.location.href = "page/home.html";
+
             }).catch((error) => {
         
             });
