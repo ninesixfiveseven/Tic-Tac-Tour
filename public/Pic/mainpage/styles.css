@@ -1,0 +1,46 @@
+body{
+    background-color: #005479;
+    background-size: cover;
+    
+}
+#underline{
+    color: #F5A302;
+    border: 1px solid #F5A302;
+    margin: 0;
+}
+#playerPic{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: solid 0.2rem #F5A302;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin: 30px;
+    
+}
+.playerInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-left: 2vw;
+}
+.playerName{
+    color: white;
+    font-family: "Mitr", sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.playerRank{
+    color: white;
+    font-family: "Mitr", sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-top: 0;
+    padding-top: 0;
+}
