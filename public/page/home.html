@@ -24,7 +24,7 @@
 </head>
 
 
-<body style="background-image: url(/public/Pic/CoverHomeTest.png); background-size: cover; margin: 30px;">
+<body style="background-image: url(/public/Pic/CoverHomeTest.png);  margin: 30px; min-height: 100%;">
     <div class="container">
         <div class="playerData">
             <div class="profile-pic">
@@ -42,12 +42,16 @@
         </div>
     </div>
     <div class="card-table">
+        <div class="button-homepage">
+            <button id="btnPlay" class="btn-hp btn-homepage" type="button">Play</button>
+            <button id="btnJoin" class="btn-hp btn-homepage" type="button">Join</button>
+        </div>
         <div class="table-content">
             <div class="table-header">
                 <h2 style="font-size: 30px;">Leaderboard 🏆</h2>
             </div>
             <div table-body>
-                <table id="leader-board" class="table" style="font-size: 20px;"></table>
+                <table id="leader-board" class="table" style="font-size: 22px;"></table>
             </div>
             <hr id="underline-2">
             <div class="playerNo">
@@ -56,31 +60,6 @@
             </div>
         </div>
     </div>
-    <div class="button-homepage">
-        <button id="btnPlay" class=" btn-homepage" type="button">Play</button>
-        <button id="btnJoin" class=" btn-homepage" type="button">Join</button>
-    </div>
-
-    <!--
-    <div id="" class=" modal" style="display: inline-block;">
-                    <div class="modal-content">
-                        <div class="modal-header" style="text-align: center;">
-                            <h2>Leaderboard 🏆</h2>
-                        </div>
-                        <div class="modal-body">
-                            <table id="leader-board" class="table">
-                            </table>
-                        </div>
-                    </div>
-            </div>
-            -->
-    <!--
-        <h2 id="user-name"></h2> Display Name
-        <img id="profile-pic" class="" src=""/> User Profile Picture
-
-        <table id="leader-board" class="table"> Leaderboard
-        </table>
-    -->
 
     <!-- Firebase SDK setup & configuration -->
     <script>

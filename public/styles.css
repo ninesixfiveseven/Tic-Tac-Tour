@@ -4,13 +4,15 @@
   box-sizing: border-box;
   font-family: "Mitr", sans-serif;
 }
+html, body {
+  min-height: 100%;
+}
 
 body {
   background-color: #033c59;
   background-image: url(/public/Pic/bg.jpg);
   background-size: cover;
 }
-
 .cover-bg {
   max-width: 30%;
   height: auto;
@@ -323,18 +325,21 @@ body {
   height: auto;
   margin: 0;
 }
+.button-homepage{
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
 .card-table{
   display: flex;
-  flex-direction: row;
-  justify-content: right;
-  align-items: center;
+  justify-content: space-between;
   margin: 30px;
 }
 .table-content{
   background-color: white;
-  width: 25vw;
+  width: calc(100% / 3);
   height: auto;
-  margin: 5px;
   border: 10px solid white;
   border-radius: 5%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -404,6 +409,4 @@ body {
   border: none;
   border-radius: 50px;
   margin: 7px 0;
-  display: flex;
-  justify-content: center;
 }
