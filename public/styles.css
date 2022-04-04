@@ -297,3 +297,8 @@ body {
   opacity: 1;
 }
 /* Page: Create */
+
+/* homepage */
+#user-name{
+  font-size: 20px;
+}
