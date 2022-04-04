@@ -10,52 +10,70 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Tic Tac Tour</title>
     <link rel="icon" type="image/x-icon" href="/public/Pic/LogoPNG.png">
-    
+
     <!-- Firebase libraries V8 -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
-    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600&display=swap');
     </style>
 </head>
 
 
-<body>
-    <div id="" class="modal" style="display: flex;">
-        <div class="modal-content">
-            <div class="modal-header" style="text-align: center;">
+<body style="background-image: url(/public/Pic/CoverHomeTest.png); background-size: cover; margin: 30px;">
+    <div class="container">
+        <div class="playerData">
+            <div class="profile-pic">
+                <img id="profile-pic" src="/public/Pic/LogoNormal.jpg" />
+            </div>
+            <div class="playerInfo">
                 <h2 id="user-name"></h2>
+                <hr id="underline">
+                <h4 class="playerRank">Chicken</h4>
             </div>
-            <div class="modal-body">
-                <form id="create-form" class="" action="#">
-                    <div class="profile-pic-container">
-                        <img id="profile-pic" class="profile-pic-image" src="/public/Pic/LogoNormal.jpg"/>
-                    </div>
-                    <div class="gender-container">
-                        <img id="male" class="gender" src="/public/image/gender/male.png"/>
-                        <img id="female" class="gender" src="/public/image/gender/female.png"/>
-                    </div>
-                </form>
+        </div>
+        <div class="setting">
+            <img class="setting-icon" style="justify-content: right;" src="/public/image/settings-free-icon-font.png"
+                alt="">
+        </div>
+    </div>
+    <div class="card-table">
+        <div class="table-content">
+            <div class="table-header">
+                <h2 style="font-size: 30px;">Leaderboard 🏆</h2>
+            </div>
+            <div table-body>
+                <table id="leader-board" class="table" style="font-size: 20px;"></table>
+            </div>
+            <hr id="underline-2">
+            <div class="playerNo">
+                <h2 style="font-size: 20px; font-weight: 400;">#PlayerNo</h2>
+                <!--js-->
             </div>
         </div>
     </div>
-
-    <div id="" class="modal" style="display: inline-block;">
-        <div class="modal-content">
-            <div class="modal-header" style="text-align: center;">
-                <h2>Leaderboard 🏆</h2>
-            </div>
-            <div class="modal-body">
-                <table id="leader-board" class="table">
-                </table>
-            </div>
-        </div>
+    <div class="button-homepage">
+        <button id="btnPlay" class=" btn-homepage" type="button">Play</button>
+        <button id="btnJoin" class=" btn-homepage" type="button">Join</button>
     </div>
 
+    <!--
+    <div id="" class=" modal" style="display: inline-block;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="text-align: center;">
+                            <h2>Leaderboard 🏆</h2>
+                        </div>
+                        <div class="modal-body">
+                            <table id="leader-board" class="table">
+                            </table>
+                        </div>
+                    </div>
+            </div>
+            -->
     <!--
         <h2 id="user-name"></h2> Display Name
         <img id="profile-pic" class="" src=""/> User Profile Picture
@@ -67,14 +85,14 @@
     <!-- Firebase SDK setup & configuration -->
     <script>
         const firebaseConfig = {
-          apiKey: "AIzaSyBUs_8zavBSFROq3vYyS5ilzm2j8RpyuUE",
-          authDomain: "tic-tac-tour.firebaseapp.com",
-          databaseURL: "https://tic-tac-tour-default-rtdb.asia-southeast1.firebasedatabase.app",
-          projectId: "tic-tac-tour",
-          storageBucket: "tic-tac-tour.appspot.com",
-          messagingSenderId: "969382271605",
-          appId: "1:969382271605:web:da0164ca21c45ced76f63c",
-          measurementId: "G-39PJD96YB2"
+            apiKey: "AIzaSyBUs_8zavBSFROq3vYyS5ilzm2j8RpyuUE",
+            authDomain: "tic-tac-tour.firebaseapp.com",
+            databaseURL: "https://tic-tac-tour-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "tic-tac-tour",
+            storageBucket: "tic-tac-tour.appspot.com",
+            messagingSenderId: "969382271605",
+            appId: "1:969382271605:web:da0164ca21c45ced76f63c",
+            measurementId: "G-39PJD96YB2"
         };
 
         // Initialize Firebase
@@ -83,4 +101,5 @@
 
     <script src="/public/js/home.js"></script>
 </body>
+
 </html>

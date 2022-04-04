@@ -299,6 +299,111 @@ body {
 /* Page: Create */
 
 /* homepage */
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  margin: 30px;
+}
+.playerData{
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+.setting{
+  display: flex;
+  width: 50%;
+  justify-content: right;
+}
+.setting-icon{
+  width: 5vw;
+  height: auto;
+  margin: 0;
+}
+.card-table{
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  margin: 30px;
+}
+.table-content{
+  background-color: white;
+  width: 25vw;
+  height: auto;
+  margin: 5px;
+  border: 10px solid white;
+  border-radius: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.table-header{
+  display: flex;
+  justify-content: center;
+}
+.table{
+  text-align: center;
+  width: 100%;
+}
+.playerNo{
+  display: flex;
+  justify-content: left;
+}
+
+#profile-pic{
+  border-radius: 50%;
+  width: 10vw;
+  height: auto;
+  border: solid 0.2rem #F5A302;
+}
+#underline{
+  color: #F5A302;
+  border: 1px solid #F5A302;
+  margin: 0;
+}
+#underline-2{
+  color: #F5A302;
+  border: 1px solid #F5A302;
+  margin-top: 3vh;
+}
 #user-name{
+  color: white;
+  font-family: "Mitr", sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.playerInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-left: 2vw;
+}
+.playerRank{
+  color: white;
+  font-family: "Mitr", sans-serif;
   font-size: 20px;
+  text-transform: uppercase;
+  margin-top: 0;
+  padding-top: 0;
+}
+.btn-homepage{
+  font-family: "Mitr", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #f5a302;
+  color: white;
+  width: 20vw;
+  height: auto;
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  margin: 7px 0;
+  display: flex;
+  justify-content: center;
 }
