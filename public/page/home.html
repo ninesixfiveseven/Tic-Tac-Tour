@@ -24,41 +24,56 @@
 </head>
 
 
-<body style="background-image: url(/public/Pic/CoverHomeTest.png);  margin: 30px; min-height: 100%;">
-    <div class="container">
-        <div class="playerData">
-            <div class="profile-pic">
-                <img id="profile-pic" src="/public/Pic/LogoNormal.jpg" />
+<body>
+    <div class="dontknow">
+        <div class="container">
+            <div class="playerData">
+                <div class="profile-pic">
+                    <img id="profile-pic" src="/public/Pic/LogoNormal.jpg" />
+                </div>
+                <div class="playerInfo">
+                    <h2 id="user-name"></h2>
+                    <hr id="underline">
+                    <h4 class="playerRank">Chicken</h4>
+                </div>
             </div>
-            <div class="playerInfo">
-                <h2 id="user-name"></h2>
-                <hr id="underline">
-                <h4 class="playerRank">Chicken</h4>
+            <div class="setting">
+                <img class="setting-icon" style="justify-content: right;"
+                    src="/public/image/settings-free-icon-font.png" alt="">
             </div>
         </div>
-        <div class="setting">
-            <img class="setting-icon" style="justify-content: right;" src="/public/image/settings-free-icon-font.png"
-                alt="">
+        <div class="card-table">
+            <div class="button-homepage">
+                <button id="btnPlay" class="btn-hp btn-homepage" type="button">Play</button>
+            </div>
+            <div class="table-content">
+                <div class="table-header">
+                    <h2 style="font-size: 30px;">Leaderboard 🏆</h2>
+                </div>
+                <div table-body>
+                    <table id="leader-board" class="table" style="font-size: 22px;"></table>
+                </div>
+                <hr id="underline-2">
+                <div class="playerNo">
+                    <h2 style="font-size: 20px; font-weight: 400;">#PlayerNo</h2>
+                    <!--js-->
+                </div>
+            </div>
         </div>
+
     </div>
-    <div class="card-table">
-        <div class="button-homepage">
-            <button id="btnPlay" class="btn-hp btn-homepage" type="button">Play</button>
-            <button id="btnJoin" class="btn-hp btn-homepage" type="button">Join</button>
-        </div>
-        <div class="table-content">
-            <div class="table-header">
-                <h2 style="font-size: 30px;">Leaderboard 🏆</h2>
-            </div>
-            <div table-body>
-                <table id="leader-board" class="table" style="font-size: 22px;"></table>
-            </div>
-            <hr id="underline-2">
-            <div class="playerNo">
-                <h2 style="font-size: 20px; font-weight: 400;">#PlayerNo</h2>
-                <!--js-->
-            </div>
-        </div>
+
+    <div class="stars" aria-hidden="true">
+        <div class="star" style="--blink:0">o</div>
+        <div class="star" style="--blink:1">x</div>
+        <div class="star" style="--blink:2">o</div>
+        <div class="star" style="--blink:3">x</div>
+        <div class="star" style="--blink:4">o</div>
+        <div class="star" style="--blink:5">x</div>
+        <div class="star" style="--blink:6">o</div>
+        <div class="star" style="--blink:7">x</div>
+        <div class="star" style="--blink:8">o</div>
+        <div class="star" style="--blink:9">x</div>
     </div>
 
     <!-- Firebase SDK setup & configuration -->

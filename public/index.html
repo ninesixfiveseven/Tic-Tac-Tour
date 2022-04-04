@@ -16,14 +16,14 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600&display=swap');
     </style>
 </head>
 
 
-<body>
+<body style="background-image: url(/public/Pic/bg.jpg); background-color: #033c59;">
     <section id="welcome-page">
         <div style=" position: relative; width: 100%; height: 100%;">
             <img src="\public/Pic/LogoPNG.png" class="cover-bg" alt="">
@@ -31,7 +31,8 @@
                 <div class="group-btn">
                     <button id="btnLogin" class="btn infos" type="button">Login</button>
                     <button id="btnSignup" class="btn infos" type="button">Signup</button>
-                    <button id="btnGoogle" class="btn google" type="button"><i class="fa fa-google fa-fw"></i> Signin with Google+</button>
+                    <button id="btnGoogle" class="btn google" type="button"><i class="fa fa-google fa-fw"></i> Signin
+                        with Google+</button>
                 </div>
             </div>
         </div>
@@ -60,7 +61,8 @@
 
                     <div class="modal-footer">
                         <button type="submit" class="btn-login">Login</button>
-                        <button id="btnGoogle" type="button" class="btn-google"><i class="fa fa-google fa-fw"></i> Signin with Google+</button>
+                        <button id="btnGoogle" type="button" class="btn-google"><i class="fa fa-google fa-fw"></i>
+                            Signin with Google+</button>
                     </div>
                 </form>
             </div>
@@ -88,7 +90,7 @@
                         <i class="fa fa-lock icon"></i>
                         <input class="input-field" type="password" placeholder="Confirm Password">
                     </div>
-                    
+
                     <label class="container">
                         <input type="checkbox"><a href="#" style="color:dodgerblue">Terms & Privacy</a>
                     </label>
@@ -106,14 +108,14 @@
     <!-- Firebase SDK setup & configuration -->
     <script>
         const firebaseConfig = {
-          apiKey: "AIzaSyBUs_8zavBSFROq3vYyS5ilzm2j8RpyuUE",
-          authDomain: "tic-tac-tour.firebaseapp.com",
-          databaseURL: "https://tic-tac-tour-default-rtdb.asia-southeast1.firebasedatabase.app",
-          projectId: "tic-tac-tour",
-          storageBucket: "tic-tac-tour.appspot.com",
-          messagingSenderId: "969382271605",
-          appId: "1:969382271605:web:da0164ca21c45ced76f63c",
-          measurementId: "G-39PJD96YB2"
+            apiKey: "AIzaSyBUs_8zavBSFROq3vYyS5ilzm2j8RpyuUE",
+            authDomain: "tic-tac-tour.firebaseapp.com",
+            databaseURL: "https://tic-tac-tour-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "tic-tac-tour",
+            storageBucket: "tic-tac-tour.appspot.com",
+            messagingSenderId: "969382271605",
+            appId: "1:969382271605:web:da0164ca21c45ced76f63c",
+            measurementId: "G-39PJD96YB2"
         };
 
         // Initialize Firebase
@@ -122,4 +124,5 @@
 
     <script src="js/auth.js"></script>
 </body>
+
 </html>
