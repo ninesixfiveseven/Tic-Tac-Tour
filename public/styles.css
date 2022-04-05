@@ -225,7 +225,10 @@ background: radial-gradient(circle, rgba(0,84,121,1) 0%, rgba(3,60,89,1) 35%, rg
   object-fit: cover;
   opacity: 0;
 }
-
+.profile-pic:hover{
+  transform: scale(1.1);
+  transition: .5s;
+}
 .profile-pic-container {
   margin: auto;
   position: relative;
@@ -324,6 +327,10 @@ background: radial-gradient(circle, rgba(0,84,121,1) 0%, rgba(3,60,89,1) 35%, rg
   width: 5vw;
   height: auto;
   margin: 0;
+}
+.setting-icon:hover{
+  transform: scale(1.1);
+  transition: all .5s;
 }
 .button-homepage{
   display: flex;
@@ -480,6 +487,13 @@ background: radial-gradient(circle, rgba(0,84,121,1) 0%, rgba(3,60,89,1) 35%, rg
 .header-setting h1{
   color: #fff;
   cursor: pointer;
+}
+.header-setting a{
+  text-decoration: none;
+}
+a:hover{
+  text-shadow: 0 0 5px wheat;
+  transition: .3s;
 }
 .setting{
   display: flex;
