@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="/public/Pic/LogoPNG.png">
+    <title>EditProfile</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600&display=swap');
+    </style>
+
+    <!-- Firebase libraries V8 -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+</head>
+<body>
+    <div class="header-setting">
+        <a href="./home.html"><h1>◀️ back</h1></a>
+    </div>
+    
+    <div class="edit-pro">
+        <div class="edit-box">
+            <h1>Edit Profile</h1>
+            <div id="profile-box">
+                <div class="profile-pic" style="width: 40%;">
+                    <img id="profile-pic" src="/public/Pic/LogoNormal.jpg" />
+                    <h2 id="user-name"></h2>
+                </div>
+                <div class="data-player">
+                    <form>
+                        <b><label>Name: </label></b>
+                        <input type="text" id="name" placeholder="✏️ Edit name.. ✏️">
+                    </form>
+                    <h2>TMR: 99999</h2>
+                    <h2>Total: 99999</h2>
+                    <h2>Win: 99999</h2>
+                    <h2>Lose: 0</h2>
+                </div>
+                <div class="button-edit">
+                    <button id="btn-edit" class="btn btn-edit" type="button"> 🔧 Edit Profile</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stars" aria-hidden="true">
+        <div class="star" style="--blink:0">o</div>
+        <div class="star" style="--blink:1">x</div>
+        <div class="star" style="--blink:2">o</div>
+        <div class="star" style="--blink:3">x</div>
+        <div class="star" style="--blink:4">o</div>
+        <div class="star" style="--blink:5">x</div>
+        <div class="star" style="--blink:6">o</div>
+        <div class="star" style="--blink:7">x</div>
+        <div class="star" style="--blink:8">o</div>
+        <div class="star" style="--blink:9">x</div>
+    </div>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBUs_8zavBSFROq3vYyS5ilzm2j8RpyuUE",
+            authDomain: "tic-tac-tour.firebaseapp.com",
+            databaseURL: "https://tic-tac-tour-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "tic-tac-tour",
+            storageBucket: "tic-tac-tour.appspot.com",
+            messagingSenderId: "969382271605",
+            appId: "1:969382271605:web:da0164ca21c45ced76f63c",
+            measurementId: "G-39PJD96YB2"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig)
+    </script>
+    <script src="/public/js/home.js"></script>
+</body>
+</html>
