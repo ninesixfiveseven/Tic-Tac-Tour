@@ -3,7 +3,7 @@ firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         console.log("User: ", user);
     } else {
-        window.location.href = "/public/index.html";
+        window.location.href = "../index.html";
     }
 });
 

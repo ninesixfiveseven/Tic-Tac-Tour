@@ -17,7 +17,7 @@ firebase.auth().onAuthStateChanged((user) => {
         });
 
     } else {
-        window.location.href = "/public/index.html";
+        window.location.href = "../index.html";
     }
 });
 
