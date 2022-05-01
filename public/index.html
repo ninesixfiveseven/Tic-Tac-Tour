@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Tic Tac Tour</title>
-    <link rel="icon" type="image/x-icon" href="/public/Pic/LogoPNG.png">
+    <link rel="icon" type="image/x-icon" href="./images/logo/logo-transparent.png">
 
     <!-- Firebase libraries V8 -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
@@ -23,16 +23,15 @@
 </head>
 
 
-<body style="background-image: url(/public/Pic/bg.jpg); background-color: #033c59;">
+<body style="background-image: url(./images/backgrounds/backgrounds.jpg); background-color: #033c59;">
     <section id="welcome-page">
         <div style=" position: relative; width: 100%; height: 100%;">
-            <img src="\public/Pic/LogoPNG.png" class="cover-bg" alt="">
+            <img src="./images/logo/logo-transparent.png" class="cover-bg" alt="">
             <div class="btnInfo" style="text-align: center; margin-top: 10vh;">
                 <div class="group-btn">
                     <button id="btnLogin" class="btn infos" type="button">Login</button>
                     <button id="btnSignup" class="btn infos" type="button">Signup</button>
-                    <button id="btnGoogle" class="btn google" type="button"><i class="fa fa-google fa-fw"></i> Signin
-                        with Google+</button>
+                    <button id="btnGoogle" class="btn google" type="button"><i class="fa fa-google fa-fw"></i> Signin with Google+</button>
                 </div>
             </div>
         </div>
@@ -61,8 +60,7 @@
 
                     <div class="modal-footer">
                         <button type="submit" class="btn-login">Login</button>
-                        <button id="btnGoogle" type="button" class="btn-google"><i class="fa fa-google fa-fw"></i>
-                            Signin with Google+</button>
+                        <button id="btnGoogle" type="button" class="btn-google"><i class="fa fa-google fa-fw"></i>Signin with Google+</button>
                     </div>
                 </form>
             </div>
@@ -122,7 +120,7 @@
         firebase.initializeApp(firebaseConfig)
     </script>
 
-    <script src="js/auth.js"></script>
+    <script src="/public/js/auth.js"></script>
 </body>
 
 </html>

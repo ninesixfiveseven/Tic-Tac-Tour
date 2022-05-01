@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/x-icon" href="/public/Pic/LogoPNG.png">
+    <link rel="icon" type="image/x-icon" href="/public/images/logo/logo-transparent.png">
     <title>Setting</title>
+
+    <!-- Firebase libraries V8 -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600&display=swap');
@@ -52,5 +59,24 @@
         <div class="star" style="--blink:8">o</div>
         <div class="star" style="--blink:9">x</div>
     </div>
+
+    <!-- Firebase SDK setup & configuration -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBUs_8zavBSFROq3vYyS5ilzm2j8RpyuUE",
+            authDomain: "tic-tac-tour.firebaseapp.com",
+            databaseURL: "https://tic-tac-tour-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "tic-tac-tour",
+            storageBucket: "tic-tac-tour.appspot.com",
+            messagingSenderId: "969382271605",
+            appId: "1:969382271605:web:da0164ca21c45ced76f63c",
+            measurementId: "G-39PJD96YB2"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig)
+    </script>
+
+    <script src="/public/js/setting.js"></script>
 </body>
 </html>

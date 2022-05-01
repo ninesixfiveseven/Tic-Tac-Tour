@@ -21,7 +21,11 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
 
+var currentUserName = ""
+var currentUserScore = ""
+
 function readLeaderboard(snapshot) {
+    const currentUser = firebase.auth().currentUser;
     var n = 1;
     var all = "";
     snapshot.forEach((data) => {
@@ -52,6 +56,22 @@ function readLeaderboard(snapshot) {
                     <td>${score}</td>
                 </tr>`;
 
+        if (currentUser.uid == data.key) {
+            currentUserName = username;
+            currentUserScore = score;
+            console.log(score)
+            if (300 < score) {
+                document.querySelector("#playerRank").innerHTML = "Pro Player";
+                console.log(1)
+            } else if (100 <= score < 300) {
+                document.querySelector("#playerRank").innerHTML = "Normal";
+                console.log(2)
+            } else if (0 <= score < 100) {
+                document.querySelector("#playerRank").innerHTML = "Chicken";
+                console.log(2)
+            }
+        }
+
         // sort score
         var table, rows, switching, i, x, y, z, shouldSwitch;
         table = document.querySelector("#leader-board");
@@ -78,6 +98,10 @@ function readLeaderboard(snapshot) {
         for (i = 1; i < (rows.length); i++) {
             z = rows[i].getElementsByTagName("TH")[0];
             z.innerHTML = i;
+
+            if (rows[i].getElementsByTagName("TD")[0].innerHTML == currentUserName) {
+                document.querySelector("#rank-of-player").innerHTML = `${i} / ${currentUserName} / ${currentUserScore}`
+            }
         }
 
         n++;
@@ -88,3 +112,9 @@ function readLeaderboard(snapshot) {
 refUserList.on("value", (data) => {
     readLeaderboard(data)
 });
+
+const btnPlay = document.querySelector("#btnPlay");
+btnPlay.addEventListener("click", () => {
+    document.querySelector("#allMode").style.display = "flex";
+    document.querySelector(".dontknow").style.webkitFilter = "blur(5px)";
+})
