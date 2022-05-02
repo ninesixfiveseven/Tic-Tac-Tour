@@ -688,6 +688,11 @@ input[type=text] {
   display: flex;
   border: 2px solid red;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.room:hover {
+  background: #bfbfbf;
 }
 
 .id-room {
@@ -700,4 +705,70 @@ input[type=text] {
 
 .nPlayer-room {
   margin: 0 2rem 0 0;
+}
+
+.card-rooms{
+  display: flex;
+  margin: 40px;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+
+.rooms-content{
+  background-color: white;
+  width: 50%;
+  min-height: 100%;
+  border: 10px solid white;
+  border-radius: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rooms-header{
+  display: flex;
+  justify-content: center;
+}
+
+.rooms-body {
+  height: 30vh;
+  overflow-y: auto;
+}
+
+
+/* Tournament Room */
+.tour-table {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 6rem;
+}
+
+.slot-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.slot-player {
+  width: 7vw;
+  height: 7vw;
+  background: white;
+  background-image: url("./images/logo/logo-normal.jpg");
+  background-size: cover;
+  cursor: pointer;
+}
+
+.fa-times {
+  position: absolute;
+  cursor: pointer;
+  transform: translate(2.1vw, -2.5vh);
+  color: red;
+  visibility: hidden;
+}
+
+.fa-times:hover {
+  color: green;
+}
+
+.btn-start {
+  cursor: pointer;
 }

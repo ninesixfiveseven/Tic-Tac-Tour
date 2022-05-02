@@ -16,6 +16,10 @@ firebase.auth().onAuthStateChanged((user) => {
             }
         });
 
+        refUserList.child(currentUser.uid).update({
+            profileURL: currentUser.photoURL
+        });
+
     } else {
         window.location.href = "../index.html";
     }

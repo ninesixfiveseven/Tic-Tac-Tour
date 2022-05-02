@@ -55,7 +55,7 @@ function createProfile(event) {
         tmr: 0,
         played: 0,
         win: 0,
-        lose: 0
+        lose: 0,
     });
 
     firebase.storage().ref("users/" + currentUser.uid + "/profile.jpg").put(fileImg).then(function () {

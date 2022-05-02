@@ -32,55 +32,62 @@
                     src="../images/icons/setting.png" alt=""></a>
             </div>
             <div class="setting">
-                <a href="./setting.html"><img class="setting-icon" style="justify-content: right;"
-                    src="../images/icons/setting.png" alt=""></a>
+                <a href="./setting.html">
+                    <img class="setting-icon" style="justify-content: right;" src="../images/icons/setting.png" alt="">
+                </a>
             </div>
         </div>
-
-        <div class="card-rooms">
-            <div class="rooms-content">
-                <div class="rooms-header">
-                    <h2 style="font-size: 30px;">Chicken Rooms 🐣</h2>
-                </div>
-                <div id="rooms-body" class="rooms-body">
-                </div>
-
-                <hr id="underline-2">
-                
-                <div class="playerNo">
-                    <h2 id="rank-of-player" style="font-size: 20px; font-weight: 400; margin-bottom: 1rem;">#อันดับของผู้เล่นตอนนี้ที่กำลัง Create</h2>
-                    <!--js-->
-                </div>
+        <div class="tour-table">
+            <div class="slot-box">
+                <img id="slot-player-1st" class="slot-player" />
+                <h2 id="slot-player-name-1st" class="slot-player-name"></h2>
             </div>
         </div>
-        <div class="button-homepage">
-            <button id="btnCreate" class="btn-hp btn-homepage" type="button">Create Room</button>
-            <button id="btnQuick" class="btn-hp btn-homepage" type="button">Quick Join</button>
-            <button id="btnSearch" class="btn-hp btn-homepage" type="button">Search Room</button>
+        <div class="tour-table">
+            <div class="slot-box">
+                <img id="slot-player-2nd" class="slot-player" />
+                <h2 id="slot-player-name-2nd" class="slot-player-name"></h2>
+
+            </div>
+            <div class="slot-box">
+                <img id="slot-player-3rd" class="slot-player" />
+                <h2 id="slot-player-name-3rd" class="slot-player-name"></h2>
+
+            </div>
+        </div>
+        <div class="tour-table">
+            <div class="slot-box">
+                <div id="btnCancelJoin" class="slotPlayer1">
+                    <i class="fa fa-times cancelJoin1" style="font-size: 3em;"></i>
+                </div>
+                <img id="slotPlayer1" class="slot-player" />
+                <h2 id="slot-player-name-1" class="slot-player-name">[ว่าง]</h2>
+            </div>
+            <div class="slot-box">
+                <div id="btnCancelJoin" class="slotPlayer2">
+                    <i class="fa fa-times cancelJoin2" style="font-size: 3em;"></i>
+                </div>
+                <img id="slotPlayer2" class="slot-player" />
+                <h2 id="slot-player-name-2" class="slot-player-name">[ว่าง]</h2>
+            </div>
+            <div class="slot-box">
+                <div id="btnCancelJoin" class="slotPlayer3">
+                    <i class="fa fa-times cancelJoin3" style="font-size: 3em;"></i>
+                </div>
+                <img id="slotPlayer3" class="slot-player" />
+                <h2 id="slot-player-name-3" class="slot-player-name">[ว่าง]</h2>
+            </div>
+            <div class="slot-box">
+                <div id="btnCancelJoin" class="slotPlayer4">
+                    <i class="fa fa-times cancelJoin4" style="font-size: 3em;"></i>
+                </div>
+                <img id="slotPlayer4" class="slot-player" />
+                <h2 id="slot-player-name-4" class="slot-player-name">[ว่าง]</h2>
+            </div>
         </div>
     </div>
-
-    <!-- Modal Create -->
-    <div id="modalCreate" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2>Create Room</h2>
-            </div>
-            <div class="modal-body">
-                <form id="create-form" class="" action="#">
-                    <div class="input-container">
-                        <input id="input-name-room" class="input-field" type="text" placeholder="Name Room">
-                    </div>
-
-                    <p id="feedback-msg-create"></p>
-
-                    <div class="modal-footer">
-                        <button type="submit" class="btn-create">Create</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+    <div class="button-homepage">
+        <button id="btnStart" class="btn-start" type="button"></button>
     </div>
 
     <div class="xo-backgrouds" aria-hidden="true">
@@ -113,7 +120,7 @@
         firebase.initializeApp(firebaseConfig)
     </script>
 
-    <script src="../js/chicken-mode.js"></script>
+    <script src="../js/tournament-chicken.js"></script>
 
 </body>
 
