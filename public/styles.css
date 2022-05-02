@@ -9,6 +9,7 @@ body {
   background: rgb(0,84,121);
   background: radial-gradient(circle, rgba(0,84,121,1) 0%, rgba(3,60,89,1) 35%, rgba(12,30,52,1) 94%);
   background-size: cover;
+  
 }
 
 .cover-bg {
@@ -438,6 +439,7 @@ body {
   border: none;
   border-radius: 50px;
   margin: 30px 0;
+  cursor: pointer;
 }
 /* Page: home */
 
@@ -502,6 +504,8 @@ body {
 
 /*setting*/
 .header-setting{
+  display: flex;
+  width: 33.3%;
   text-align: left;
   padding: 40px;
 }
@@ -669,18 +673,23 @@ input[type=text] {
 }
 
 .btn-mode:hover {
-  opacity: .5;
+  transform: scale(1.1);
+  transition: all .3s;
+  box-shadow: 0 0 10px #fff;
 }
 
 .btn-close-mode {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 50px;
+  right: 200px;
   width: 100px;
   height: 100px;
-  background-image: url(./images/icons/close.png);
   background-size: cover;
   cursor: pointer;
+}
+
+.btn-close-mode:hover{
+  text-shadow: 0 0 5px red;
 }
 
 /* Rooms */
@@ -771,4 +780,11 @@ input[type=text] {
 
 .btn-start {
   cursor: pointer;
+}
+
+.text-header{
+  width: 33.3%;
+  display: flex;
+  color: white;
+  justify-content: center;
 }
