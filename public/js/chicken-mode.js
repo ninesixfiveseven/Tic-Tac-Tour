@@ -34,6 +34,7 @@ createForm.addEventListener("submit", createRoom);
 
 function createRoom(event) {
     event.preventDefault();
+    const currentUser = firebase.auth().currentUser;
     let name = document.querySelector("#input-name-room").value;
 
     refChickenRooms.push({
@@ -45,17 +46,21 @@ function createRoom(event) {
         [player2]: " ",
         [player3]: " ",
         [player4]: " ",
+        owner: currentUser.uid
     });
+    
+    document.querySelector("#input-name-room").value = "";
 }
 
 function readRooms(snapshot) {
     document.querySelector("#rooms-body").innerHTML = "";
     snapshot.forEach((data) => {
+        const roomKey = data.key;
         const roomId = data.val().roomId;
         const status = data.val().status;
         const numOfPlayer = data.val().numOfPlayer;
         const name = data.val().name;
-        const newDivRoom = `<div id="${roomId}" class="room" onclick="joinRoom(this)">
+        const newDivRoom = `<div id="${roomKey}" class="room" onclick="joinRoom(this)">
                                 <h2 class="id-room">${roomId}</h2>
                                 <h2 class="status-room">${status}</h2>
                                 <h2 class="nPlayer-room">${numOfPlayer} / 4</h2>

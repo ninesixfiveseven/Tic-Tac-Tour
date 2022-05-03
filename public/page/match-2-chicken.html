@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="../images/logo/logo-transparent.png">
+    <title>Tic Tac Tour</title>
+
+    <!-- Firebase libraries V8 -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600&display=swap');
+    </style>
+</head>
+
+
+<body>
+    <div class="dontknow">
+        <div class="my-container">
+            <div class="playerData">
+                <div class="profile-pic">
+                    <img id="profile-pic-x" class="profile-pic" src="../images/logo/logo-normal.jpg" />
+                </div>
+                <div class="playerInfo">
+                    <h2 id="user-name-x" class="user-name"></h2>
+                    <h2 class="user-name">X</h2>
+                </div>
+            </div>
+            <div class="playerData" style="justify-content: right;">
+                <div class="profile-pic">
+                    <img id="profile-pic-y" class="profile-pic" src="../images/logo/logo-normal.jpg" />
+                </div>
+                <div class="playerInfo">
+                    <h2 id="user-name-y" class="user-name"></h2>
+                    <h2 class="user-name">O</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mb-2">
+        <div class="row" id="row-1" style="height: 20vh;">
+            <div class="col border justify-content-center align-items-center table-col" id="row-1-col-1"><p class="display-4 d-flex justify-content-center"></p></div>
+            <div class="col border justify-content-center align-items-center table-col" id="row-1-col-2"><p class="display-4 d-flex justify-content-center"></p></div>
+            <div class="col border justify-content-center align-items-center table-col" id="row-1-col-3"><p class="display-4 d-flex justify-content-center"></p></div>
+        </div>
+        <div class="row" id="row-2" style="height: 20vh;">
+            <div class="col border justify-content-center align-items-center table-col" id="row-2-col-1"><p class="display-4 d-flex justify-content-center"></p></div>
+            <div class="col border justify-content-center align-items-center table-col" id="row-2-col-2"><p class="display-4 d-flex justify-content-center"></p></div>
+            <div class="col border justify-content-center align-items-center table-col" id="row-2-col-3"><p class="display-4 d-flex justify-content-center"></p></div>
+        </div>
+        <div class="row" id="row-3" style="height: 20vh;">
+            <div class="col border justify-content-center align-items-center table-col" id="row-3-col-1"><p class="display-4 d-flex justify-content-center"></p></div>
+            <div class="col border justify-content-center align-items-center table-col" id="row-3-col-2"><p class="display-4 d-flex justify-content-center"></p></div>
+            <div class="col border justify-content-center align-items-center table-col" id="row-3-col-3"><p class="display-4 d-flex justify-content-center"></p></div>
+        </div>
+    </div>
+
+
+    <div class="xo-backgrouds" aria-hidden="true">
+        <div class="xo-bg" style="--blink:0">o</div>
+        <div class="xo-bg" style="--blink:1">x</div>
+        <div class="xo-bg" style="--blink:2">o</div>
+        <div class="xo-bg" style="--blink:3">x</div>
+        <div class="xo-bg" style="--blink:4">o</div>
+        <div class="xo-bg" style="--blink:5">x</div>
+        <div class="xo-bg" style="--blink:6">o</div>
+        <div class="xo-bg" style="--blink:7">x</div>
+        <div class="xo-bg" style="--blink:8">o</div>
+        <div class="xo-bg" style="--blink:9">x</div>
+    </div>
+
+    <!-- Firebase SDK setup & configuration -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBUs_8zavBSFROq3vYyS5ilzm2j8RpyuUE",
+            authDomain: "tic-tac-tour.firebaseapp.com",
+            databaseURL: "https://tic-tac-tour-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "tic-tac-tour",
+            storageBucket: "tic-tac-tour.appspot.com",
+            messagingSenderId: "969382271605",
+            appId: "1:969382271605:web:da0164ca21c45ced76f63c",
+            measurementId: "G-39PJD96YB2"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig)
+    </script>
+
+    <script src="../js/match-2-chicken.js"></script>
+
+</body>
+
+</html>

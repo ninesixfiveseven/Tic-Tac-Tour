@@ -306,7 +306,7 @@ body {
   height: auto;
 }
 
-.container{
+.my-container{
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -387,6 +387,13 @@ body {
   border: solid 0.2rem #F5A302;
 }
 
+.profile-pic{
+  border-radius: 50%;
+  width: 10vw;
+  height: auto;
+  border: solid 0.2rem #F5A302;
+}
+
 #underline{
   color: #F5A302;
   border: 1px solid #F5A302;
@@ -400,6 +407,15 @@ body {
 }
 
 #user-name{
+  color: white;
+  font-family: "Mitr", sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.user-name{
   color: white;
   font-family: "Mitr", sans-serif;
   font-size: 24px;
@@ -771,4 +787,11 @@ input[type=text] {
 
 .btn-start {
   cursor: pointer;
+}
+
+/* Match Chicken */
+.guide {
+  display: flex;
+  justify-content: center;
+  color: red;
 }
