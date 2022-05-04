@@ -30,9 +30,9 @@ function getPlayerXY(snapshot) {
 function matchIdRoom(snapshot) {
     snapshot.forEach((data) => {
         if (data.key == currentRoomKey) {
-            playerX = data.val().Match1.playerX;
-            playerO = data.val().Match1.playerO;
-            turn = data.val().Match1.turn;
+            playerX = data.val().Match3.playerX;
+            playerO = data.val().Match3.playerO;
+            turn = data.val().Match3.turn;
             document.querySelector("#displayGuide").innerHTML = `Turn: ${turn}`;
         }
     })
@@ -69,14 +69,14 @@ function handleColClick(event) {
     let onThisCol = event.currentTarget.childNodes[0];    
     if (onThisCol.innerHTML == " " && playerX == currentUser.uid && turn == "X") {
         let presentCol = event.currentTarget.getAttribute('id');
-        refChickenRooms.child(currentRoomKey).child("Match1").update({
+        refChickenRooms.child(currentRoomKey).child("Match3").update({
             [presentCol]: "X",
             turn: "O"
         });
     } else if (onThisCol.innerHTML == " " && playerO == currentUser.uid  && turn == "O") {
         console.log(event.currentTarget.getAttribute('id'));
         let presentCol = event.currentTarget.getAttribute('id');
-        refChickenRooms.child(currentRoomKey).child("Match1").update({
+        refChickenRooms.child(currentRoomKey).child("Match3").update({
             [presentCol]: "O",
             turn: "X"
         });
@@ -88,24 +88,24 @@ function readXOTable(snapshot) {
     snapshot.forEach((data) => {
         if (data.key == currentRoomKey) {
             console.log("Read")
-            document.querySelector("#row1col1").childNodes[0].innerHTML = data.val().Match1.row1col1;
-            gameState[0] = data.val().Match1.row1col1;
-            document.querySelector("#row1col2").childNodes[0].innerHTML = data.val().Match1.row1col2;
-            gameState[1] = data.val().Match1.row1col2;
-            document.querySelector("#row1col3").childNodes[0].innerHTML = data.val().Match1.row1col3;
-            gameState[2] = data.val().Match1.row1col3;
-            document.querySelector("#row2col1").childNodes[0].innerHTML = data.val().Match1.row2col1;
-            gameState[3] = data.val().Match1.row2col1;
-            document.querySelector("#row2col2").childNodes[0].innerHTML = data.val().Match1.row2col2;
-            gameState[4] = data.val().Match1.row2col2;
-            document.querySelector("#row2col3").childNodes[0].innerHTML = data.val().Match1.row2col3;
-            gameState[5] = data.val().Match1.row2col3;
-            document.querySelector("#row3col1").childNodes[0].innerHTML = data.val().Match1.row3col1;
-            gameState[6] = data.val().Match1.row3col1;
-            document.querySelector("#row3col2").childNodes[0].innerHTML = data.val().Match1.row3col2;
-            gameState[7] = data.val().Match1.row3col2;
-            document.querySelector("#row3col3").childNodes[0].innerHTML = data.val().Match1.row3col3;
-            gameState[8] = data.val().Match1.row3col3;
+            document.querySelector("#row1col1").childNodes[0].innerHTML = data.val().Match3.row1col1;
+            gameState[0] = data.val().Match3.row1col1;
+            document.querySelector("#row1col2").childNodes[0].innerHTML = data.val().Match3.row1col2;
+            gameState[1] = data.val().Match3.row1col2;
+            document.querySelector("#row1col3").childNodes[0].innerHTML = data.val().Match3.row1col3;
+            gameState[2] = data.val().Match3.row1col3;
+            document.querySelector("#row2col1").childNodes[0].innerHTML = data.val().Match3.row2col1;
+            gameState[3] = data.val().Match3.row2col1;
+            document.querySelector("#row2col2").childNodes[0].innerHTML = data.val().Match3.row2col2;
+            gameState[4] = data.val().Match3.row2col2;
+            document.querySelector("#row2col3").childNodes[0].innerHTML = data.val().Match3.row2col3;
+            gameState[5] = data.val().Match3.row2col3;
+            document.querySelector("#row3col1").childNodes[0].innerHTML = data.val().Match3.row3col1;
+            gameState[6] = data.val().Match3.row3col1;
+            document.querySelector("#row3col2").childNodes[0].innerHTML = data.val().Match3.row3col2;
+            gameState[7] = data.val().Match3.row3col2;
+            document.querySelector("#row3col3").childNodes[0].innerHTML = data.val().Match3.row3col3;
+            gameState[8] = data.val().Match3.row3col3;
         }
     })
 }
@@ -146,12 +146,12 @@ function matchChecking(gameState) {
     if (roundWon) {
         document.querySelector('#displayGuide').innerHTML = `Winner: ${winner}`;
         if (playerX == currentUser.uid && winner == "X") {
-            refChickenRooms.child(currentRoomKey).child("Match1").update({
+            refChickenRooms.child(currentRoomKey).child("Match3").update({
                 winner: playerX,
                 loser: playerO
             });
         } else if (playerO == currentUser.uid && winner == "O") {
-            refChickenRooms.child(currentRoomKey).child("Match1").update({
+            refChickenRooms.child(currentRoomKey).child("Match3").update({
                 winner: playerO,
                 loser: playerX
             });
@@ -162,7 +162,7 @@ function matchChecking(gameState) {
     let roundDraw = !gameState.includes(" ");
     if (roundDraw) {
         document.querySelector('#displayGuide').innerHTML = "GAME DRAW";
-        refChickenRooms.child(currentRoomKey).child("Match1").update({
+        refChickenRooms.child(currentRoomKey).child("Match3").update({
             row1col1: " ",
             row1col2: " ",
             row1col3: " ",
@@ -185,15 +185,15 @@ function whoIsWinAndLose(snapshot) {
     const currentUser = firebase.auth().currentUser;
     snapshot.forEach((data) => {
         if (data.key == currentRoomKey) {
-            if (currentUser.uid == data.val().Match1.winner) {
+            if (currentUser.uid == data.val().Match3.winner) {
                 refChickenRooms.child(currentRoomKey).update({
-                    playing: "waiting final round"
+                    playing: "end"
                 });
                 window.location.href = "tournament-chicken.html";
             }
-            if (currentUser.uid == data.val().Match1.loser) {
+            if (currentUser.uid == data.val().Match3.loser) {
                 refChickenRooms.child(currentRoomKey).update({
-                    playing: "waiting final round"
+                    playing: "end"
                 });
                 window.location.href = "tournament-chicken.html";
             }

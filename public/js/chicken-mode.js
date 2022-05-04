@@ -46,9 +46,10 @@ function createRoom(event) {
         [player2]: " ",
         [player3]: " ",
         [player4]: " ",
+        playing: " ",
         owner: currentUser.uid
     });
-    
+
     document.querySelector("#input-name-room").value = "";
 }
 
@@ -71,8 +72,19 @@ function readRooms(snapshot) {
     })
 }
 
+function checkRooms(snapshot) {
+    snapshot.forEach((data) => {
+        if (snapshot.child(data.key).hasChild("roomId")) {
+            console.log(data.key);
+        } else {
+            refChickenRooms.child(data.key).remove();
+        }
+    })
+}
+
 refChickenRooms.on("value", (snapshot) => {
     readRooms(snapshot);
+    checkRooms(snapshot);
 });
 
 function joinRoom(event) {

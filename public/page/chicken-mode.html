@@ -25,38 +25,25 @@
 
 
 <body>
+    <div class="header-setting">
+        <a href="./home.html"><i class="fa fa-arrow-left" style="font-size: 5vw; color: #f5a302;" aria-hidden="true"></i></a>
+    </div>
     <div class="dontknow">
-        <div class="my-container">
-            <div class="setting">
-                <a href="./setting.html"><img class="setting-icon" style="justify-content: right;"
-                    src="../images/icons/setting.png" alt=""></a>
-            </div>
-            <div class="setting">
-                <a href="./setting.html"><img class="setting-icon" style="justify-content: right;"
-                    src="../images/icons/setting.png" alt=""></a>
-            </div>
-        </div>
-
         <div class="card-rooms">
             <div class="rooms-content">
                 <div class="rooms-header">
-                    <h2 style="font-size: 30px;">Chicken Rooms 🐣</h2>
+                    <h2 style="font-size: 30px;">All Rooms</h2>
                 </div>
                 <div id="rooms-body" class="rooms-body">
                 </div>
-
-                <hr id="underline-2">
-                
-                <div class="playerNo">
-                    <h2 id="rank-of-player" style="font-size: 20px; font-weight: 400; margin-bottom: 1rem;">#อันดับของผู้เล่นตอนนี้ที่กำลัง Create</h2>
-                    <!--js-->
+                <div id="rooms-footer" class="rooms-footer">
                 </div>
             </div>
         </div>
         <div class="button-homepage">
             <button id="btnCreate" class="btn-hp btn-homepage" type="button">Create Room</button>
-            <button id="btnQuick" class="btn-hp btn-homepage" type="button">Quick Join</button>
-            <button id="btnSearch" class="btn-hp btn-homepage" type="button">Search Room</button>
+            <!-- <button id="btnQuick" class="btn-hp btn-homepage" type="button">Quick Join</button>
+            <button id="btnSearch" class="btn-hp btn-homepage" type="button">Search Room</button> -->
         </div>
     </div>
 
@@ -72,9 +59,6 @@
                     <div class="input-container">
                         <input id="input-name-room" class="input-field" type="text" placeholder="Name Room">
                     </div>
-
-                    <p id="feedback-msg-create"></p>
-
                     <div class="modal-footer">
                         <button type="submit" class="btn-create">Create</button>
                     </div>

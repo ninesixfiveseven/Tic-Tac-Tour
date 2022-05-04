@@ -64,16 +64,17 @@ function readLeaderboard(snapshot) {
             currentUserName = username;
             currentUserScore = score;
             console.log(score)
-            if (300 < score) {
-                document.querySelector("#playerRank").innerHTML = "Pro Player";
-                console.log(1)
-            } else if (100 <= score < 300) {
-                document.querySelector("#playerRank").innerHTML = "Normal";
-                console.log(2)
-            } else if (0 <= score < 100) {
-                document.querySelector("#playerRank").innerHTML = "Chicken";
-                console.log(2)
-            }
+            document.querySelector("#playerRank").innerHTML = `[TMR] : ${currentUserScore}`;
+            // if (300 < score) {
+            //     document.querySelector("#playerRank").innerHTML = `${currentUserScore}`;
+            //     console.log(1)
+            // } else if (100 <= score < 300) {
+            //     document.querySelector("#playerRank").innerHTML = "Normal";
+            //     console.log(2)
+            // } else if (0 <= score < 100) {
+            //     document.querySelector("#playerRank").innerHTML = "Chicken";
+            //     console.log(2)
+            // }
         }
 
         // sort score
@@ -104,7 +105,7 @@ function readLeaderboard(snapshot) {
             z.innerHTML = i;
 
             if (rows[i].getElementsByTagName("TD")[0].innerHTML == currentUserName) {
-                document.querySelector("#rank-of-player").innerHTML = `${i} / ${currentUserName} / ${currentUserScore}`
+                document.querySelector("#rank-of-player").innerHTML = `อันดับของผู้เล่น: ${i} คะแนนของผู้เล่น: ${currentUserScore}`
             }
         }
 
@@ -119,6 +120,5 @@ refUserList.on("value", (data) => {
 
 const btnPlay = document.querySelector("#btnPlay");
 btnPlay.addEventListener("click", () => {
-    document.querySelector("#allMode").style.display = "flex";
-    document.querySelector(".dontknow").style.webkitFilter = "blur(5px)";
+    window.location.href = "chicken-mode.html";
 })
