@@ -15,6 +15,13 @@ let currentRoomKey = "";
 
 let playerX = "";
 let playerO = "";
+let tmrPlayerX = 0;
+let tmrPlayerO = 0;
+let playerXLose = 0;
+let playerOLose = 0;
+let playerXWin = 0;
+let playerOWin = 0;
+
 let turn = "";
 let gameState = ["T", "I", "C", "T", "A", "C", "T", "O", "E"];
 
@@ -50,13 +57,26 @@ function updatePlayerXO(snapshot) {
         whoIsWinAndLose(snapshot);
     });
     snapshot.forEach((data) => {
+        const currentUser = firebase.auth().currentUser;
         if (data.key == playerX) {
             document.querySelector("#profile-pic-x").src = data.val().profileURL;
-            document.querySelector("#user-name-x").innerHTML = data.val().name;
+            tmrPlayerX = data.val().tmr;
+            console.log(`Old TMR: PlayerX[${tmrPlayerX}], PlayerO[${tmrPlayerO}]`);
+            if (playerX == currentUser.uid) {
+                document.querySelector("#user-name-x").innerHTML = `${data.val().name} (ME)`;
+            } else {
+                document.querySelector("#user-name-x").innerHTML = data.val().name;
+            }
         }
         if (data.key == playerO) {
             document.querySelector("#profile-pic-o").src = data.val().profileURL;
-            document.querySelector("#user-name-o").innerHTML = data.val().name;
+            tmrPlayerO = data.val().tmr;
+            console.log(`Old TMR: PlayerX[${tmrPlayerX}], PlayerO[${tmrPlayerO}]`);
+            if (playerO == currentUser.uid) {
+                document.querySelector("#user-name-o").innerHTML = `(ME) ${data.val().name}`;
+            } else {
+                document.querySelector("#user-name-o").innerHTML = data.val().name;
+            }
         }
     })
 }
@@ -122,6 +142,24 @@ const winningConditions = [
     [2, 4, 6]
 ];
 
+function resetBoard() {
+    refChickenRooms.child(currentRoomKey).child("Match3").update({
+        row1col1: " ",
+        row1col2: " ",
+        row1col3: " ",
+        row2col1: " ",
+        row2col2: " ",
+        row2col3: " ",
+        row3col1: " ",
+        row3col2: " ",
+        row3col3: " ",
+        turn: "X",
+        winner: " ",
+        loser: " "
+    });
+    gameState = ["T", "I", "C", "T", "A", "C", "T", "O", "E"];
+}
+
 // Check result who's win.
 function matchChecking(gameState) {
     const currentUser = firebase.auth().currentUser;
@@ -139,6 +177,10 @@ function matchChecking(gameState) {
         if (a === b && b === c) {
             roundWon = true;
             winner = b;
+            playerXLose = tmrPlayerX+5;
+            playerOLose = tmrPlayerO+5;
+            playerXWin = tmrPlayerX+10;
+            playerOWin = tmrPlayerO+10;
             break
         }
     }
@@ -146,14 +188,26 @@ function matchChecking(gameState) {
     if (roundWon) {
         document.querySelector('#displayGuide').innerHTML = `Winner: ${winner}`;
         if (playerX == currentUser.uid && winner == "X") {
+            refUserList.child(playerX).update({
+                tmr: playerXWin,
+            });
             refChickenRooms.child(currentRoomKey).child("Match3").update({
                 winner: playerX,
                 loser: playerO
             });
+            refUserList.child(playerO).update({
+                tmr: playerOLose,
+            });
         } else if (playerO == currentUser.uid && winner == "O") {
+            refUserList.child(playerX).update({
+                tmr: playerOWin,
+            });
             refChickenRooms.child(currentRoomKey).child("Match3").update({
                 winner: playerO,
                 loser: playerX
+            });
+            refUserList.child(playerX).update({
+                tmr: playerXLose,
             });
         }
         return;
@@ -162,21 +216,7 @@ function matchChecking(gameState) {
     let roundDraw = !gameState.includes(" ");
     if (roundDraw) {
         document.querySelector('#displayGuide').innerHTML = "GAME DRAW";
-        refChickenRooms.child(currentRoomKey).child("Match3").update({
-            row1col1: " ",
-            row1col2: " ",
-            row1col3: " ",
-            row2col1: " ",
-            row2col2: " ",
-            row2col3: " ",
-            row3col1: " ",
-            row3col2: " ",
-            row3col3: " ",
-            turn: "X",
-            winner: " ",
-            loser: " "
-        });
-        gameState = ["T", "I", "C", "T", "A", "C", "T", "O", "E"];
+        setTimeout(resetBoard, 2000);
         return;
     }
 }

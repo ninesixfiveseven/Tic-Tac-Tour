@@ -20,9 +20,6 @@ let slotPlayer2 = " ";
 let slotPlayer3 = " ";
 let slotPlayer4 = " ";
 
-let tmrPlayer1st = " ";
-let tmrPlayer2nd = " ";
-let tmrPlayer3rd = " ";
 let tmrPlayer1 = " ";
 let tmrPlayer2 = " ";
 let tmrPlayer3 = " ";
@@ -107,7 +104,6 @@ function matchIdRoom(snapshot) {
             refUserList.on("value", (snapshot) => {
                 getTMRPlayer(snapshot);
                 console.log(`Old TMR: 1[${tmrPlayer1}], 2[${tmrPlayer2}], 3[${tmrPlayer3}], 4[${tmrPlayer4}]`);
-
             });
         }
     })
@@ -490,43 +486,43 @@ function whoIsWinerRound1(snapshot) {
         if (data.key == currentRoomKey) {
             if (slotPlayer1 == data.val().Match1.winner) {
                 slotPlayer2nd = slotPlayer1;
-                tmrPlayer2nd = tmrPlayer1;
+                // tmrPlayer2nd = tmrPlayer1;
                 document.querySelector("#slotPlayer2").style.filter = "grayscale(100%)";
-                if (statusPlaying == "end") {
-                    refUserList.child(slotPlayer2).update({
-                        tmr: tmrPlayer2 -= 5,
-                    });
-                }
+                // if (statusPlaying == "end") {
+                //     refUserList.child(slotPlayer2).update({
+                //         tmr: tmrPlayer2 -= 5,
+                //     });
+                // }
             }
             if (slotPlayer2 == data.val().Match1.winner) {
                 slotPlayer2nd = slotPlayer2;
-                tmrPlayer2nd = tmrPlayer2;
+                // tmrPlayer2nd = tmrPlayer2;
                 document.querySelector("#slotPlayer1").style.filter = "grayscale(100%)";
-                if (statusPlaying == "end") {
-                    refUserList.child(slotPlayer1).update({
-                        tmr: tmrPlayer1 -= 5,
-                    });
-                }
+                // if (statusPlaying == "end") {
+                //     refUserList.child(slotPlayer1).update({
+                //         tmr: tmrPlayer1 -= 5,
+                //     });
+                // }
             }
             if (slotPlayer3 == data.val().Match2.winner) {
                 slotPlayer3rd = slotPlayer3;
-                tmrPlayer3rd = tmrPlayer3;
+                // tmrPlayer3rd = tmrPlayer3;
                 document.querySelector("#slotPlayer4").style.filter = "grayscale(100%)";
-                if (statusPlaying == "end") {
-                    refUserList.child(slotPlayer4).update({
-                        tmr: tmrPlayer4 -= 5,
-                    });
-                }
+                // if (statusPlaying == "end") {
+                //     refUserList.child(slotPlayer4).update({
+                //         tmr: tmrPlayer4 -= 5,
+                //     });
+                // }
             }
             if (slotPlayer4 == data.val().Match2.winner) {
                 slotPlayer3rd = slotPlayer4;
-                tmrPlayer3rd = tmrPlayer4;
+                // tmrPlayer3rd = tmrPlayer4;
                 document.querySelector("#slotPlayer3").style.filter = "grayscale(100%)";
-                if (statusPlaying == "end") {
-                    refUserList.child(slotPlayer3).update({
-                        tmr: tmrPlayer3 -= 5,
-                    });
-                }
+                // if (statusPlaying == "end") {
+                //     refUserList.child(slotPlayer3).update({
+                //         tmr: tmrPlayer3 -= 5,
+                //     });
+                // }
             }
             refUserList.on("value", (snapshot) => {
                 updateTourLine(snapshot);
@@ -541,29 +537,29 @@ function whoIsFinalWiner(snapshot) {
         if (data.key == currentRoomKey) {
             if (slotPlayer2nd == data.val().Match3.winner && statusPlaying == "end") {
                 slotPlayer1st = slotPlayer2nd;
-                tmrPlayer1st = tmrPlayer2nd;
+                // tmrPlayer1st = tmrPlayer2nd;
                 document.querySelector("#slot-player-3rd").style.filter = "grayscale(100%)";
-                if (statusPlaying == "end") {
-                    refUserList.child(slotPlayer3rd).update({
-                        tmr:  tmrPlayer3rd += 5,
-                    });
-                    refUserList.child(slotPlayer1st).update({
-                        tmr:  tmrPlayer1st += 10,
-                    });
-                }
+                // if (statusPlaying == "end") {
+                //     refUserList.child(slotPlayer3rd).update({
+                //         tmr:  tmrPlayer3rd += 5,
+                //     });
+                //     refUserList.child(slotPlayer1st).update({
+                //         tmr:  tmrPlayer1st += 10,
+                //     });
+                // }
             }
             if (slotPlayer3rd == data.val().Match3.winner && statusPlaying == "end") {
                 slotPlayer1st = slotPlayer3rd;
-                tmrPlayer1st = tmrPlayer3rd;
+                // tmrPlayer1st = tmrPlayer3rd;
                 document.querySelector("#slot-player-2nd").style.filter = "grayscale(100%)";
-                if (statusPlaying == "end") {
-                    refUserList.child(slotPlayer2nd).update({
-                        tmr:  tmrPlayer2nd += 5,
-                    });
-                    refUserList.child(slotPlayer1st).update({
-                        tmr:  tmrPlayer1st += 10,
-                    });
-                }
+                // if (statusPlaying == "end") {
+                //     refUserList.child(slotPlayer2nd).update({
+                //         tmr:  tmrPlayer2nd += 5,
+                //     });
+                //     refUserList.child(slotPlayer1st).update({
+                //         tmr:  tmrPlayer1st += 10,
+                //     });
+                // }
             }
             refUserList.on("value", (snapshot) => {
                 updateTourLine(snapshot);
