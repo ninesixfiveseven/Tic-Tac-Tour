@@ -188,9 +188,6 @@ function matchChecking(gameState) {
     if (roundWon) {
         document.querySelector('#displayGuide').innerHTML = `Winner: ${winner}`;
         if (playerX == currentUser.uid && winner == "X") {
-            refUserList.child(playerX).update({
-                tmr: playerXWin,
-            });
             refChickenRooms.child(currentRoomKey).child("Match3").update({
                 winner: playerX,
                 loser: playerO
@@ -199,9 +196,6 @@ function matchChecking(gameState) {
                 tmr: playerOLose,
             });
         } else if (playerO == currentUser.uid && winner == "O") {
-            refUserList.child(playerX).update({
-                tmr: playerOWin,
-            });
             refChickenRooms.child(currentRoomKey).child("Match3").update({
                 winner: playerO,
                 loser: playerX

@@ -59,7 +59,6 @@ function updatePlayerXO(snapshot) {
         if (data.key == playerX) {
             document.querySelector("#profile-pic-x").src = data.val().profileURL;
             tmrPlayerX = data.val().tmr;
-            playerXLose = tmrPlayerX-5;
             console.log(`Old TMR: PlayerX[${tmrPlayerX}], PlayerO[${tmrPlayerO}]`);
             if (playerX == currentUser.uid) {
                 document.querySelector("#user-name-x").innerHTML = `${data.val().name} (ME)`;
@@ -70,7 +69,6 @@ function updatePlayerXO(snapshot) {
         if (data.key == playerO) {
             document.querySelector("#profile-pic-o").src = data.val().profileURL;
             tmrPlayerO = data.val().tmr;
-            playerOLose = tmrPlayerO-5;
             console.log(`Old TMR: PlayerX[${tmrPlayerX}], PlayerO[${tmrPlayerO}]`);
             if (playerO == currentUser.uid) {
                 document.querySelector("#user-name-o").innerHTML = `(ME) ${data.val().name}`;

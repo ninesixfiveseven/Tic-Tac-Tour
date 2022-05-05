@@ -20,6 +20,7 @@ let slotPlayer2 = " ";
 let slotPlayer3 = " ";
 let slotPlayer4 = " ";
 
+let tmrPlayer1st = " ";
 let tmrPlayer1 = " ";
 let tmrPlayer2 = " ";
 let tmrPlayer3 = " ";
@@ -412,7 +413,6 @@ function startFinalMatch() {
 }
 
 function getWinnerLoserOfMatch(snapshot) {
-    const currentUser = firebase.auth().currentUser;
     snapshot.forEach((data) => {
         if (currentRoomKey == data.key) {
             winnerMatch1 = data.val().Match1.winner;
@@ -427,6 +427,10 @@ function getWinnerLoserOfMatch(snapshot) {
 }
 
 function endMatch() {
+    let updateTMR1st = tmrPlayer1st + 10;
+    refUserList.child(slotPlayer1st).update({
+        tmr: updateTMR1st,
+    });
     refChickenRooms.child(currentRoomKey).update({
         playing: "remove"
     });
@@ -589,6 +593,7 @@ function updateTourLine(snapshot) {
             document.querySelector(".cancelJoin2").style.visibility = "hidden";
             document.querySelector(".cancelJoin3").style.visibility = "hidden";
             document.querySelector(".cancelJoin4").style.visibility = "hidden";
+            tmrPlayer1st = data.val().tmr;
         }
     })
 }
