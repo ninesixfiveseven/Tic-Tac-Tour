@@ -305,9 +305,6 @@ function playerInRoom(snapshot) {
             if (sumN == 4 && statusPlaying != "end" && statusPlaying != "rouud1") {
                 document.querySelector("#btnStart").innerHTML = "Let's Play";
                 document.querySelector("#btnStart").disabled  = false;
-                refChickenRooms.child(currentRoomKey).update({
-                    status: "Ready to Play",
-                });
             }
             if (sumN == 4 && statusPlaying == "rouud1") {
                 console.log(statusPlaying)
